@@ -14,7 +14,7 @@
  * Enum Constant Not Present Exception
  * <p>Thrown if an Enumeration object does not contain the specified name.</p>
  *
- * @param {string} message the error message (optional)
+ * @param {String} message the error message (optional)
  */
 PJ.EnumConstantNotPresentException = function (message) {
     PJ.Exception.call(this, "EnumConstantNotPresentException", message);
@@ -69,7 +69,7 @@ PJ.Enum = function (_args) {
      * @returns {Number} the number of elements
      */
     this.size = function () {
-        return this._size;
+        return _size;
     };
 
     /**
