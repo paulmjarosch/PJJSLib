@@ -119,7 +119,7 @@ PJ.StringUtils.parseQueryString = function (qs) {
  * <p>If the length of the string is greater than or equal to len, then the original string is returned.</p>
  *
  * @param {String} str the to string to pad. Defaults to empty string.
- * @param {int} len the total length of the string after padding. Defaults to length of string.
+ * @param {Number} len the total length of the string after padding. Defaults to length of string.
  * @param {String} ch the character (or string) to pad with. Defaults to empty space ( ).
  * @param {Number} opt <i>[OPTIONAL]</i> the direction to pad. One of the following PJ.StringUtil.PAD_BOTH, PJ.StringUtil.PAD_LEFT, PJ.StringUtil.PAD_RIGHT. Defaults to PJ.StringUtil.PAD_BOTH.
  *

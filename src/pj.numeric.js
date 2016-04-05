@@ -135,11 +135,11 @@ PJ.Numeric.SHORT_SIGNED_MAX_VALUE = 32767;
 /**
  * Performs a check on n to determine if it is within the specified range
  *
- * @param n the value to check
- * @param min the minimum value
- * @param max the maximum value
- * @param min_inc is min inclusive range? If true, then min is also a valid value for n. Defaults to true.
- * @param max_inc is max inclusive range? If true, then max is also a valid value for n. Defaults to true.
+ * @param {Number} n the value to check
+ * @param {Number} min the minimum value
+ * @param {Number} max the maximum value
+ * @param {Boolean} min_inc is min inclusive range? If true, then min is also a valid value for n. Defaults to true.
+ * @param {Boolean} max_inc is max inclusive range? If true, then max is also a valid value for n. Defaults to true.
  *
  * @returns {Boolean} true if n is within range; otherwise false
  */

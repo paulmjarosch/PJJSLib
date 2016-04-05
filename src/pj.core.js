@@ -75,7 +75,7 @@ PJ.typeOf = function (obj) {
 /**
  * Compares the type of obj against type.
  * @param {Object} obj the object to test
- * @param {string} type the object's type
+ * @param {String} type the object's type
  * @returns {Boolean} true if the object of type; otherwise false
  */
 PJ.isTypeOf = function (obj, type) {
@@ -193,8 +193,8 @@ PJ.parseBoolean = function (obj) {
 //classes
 /**
  * Exception Class
- * @param {string} name the name of the exception
- * @param {string} message the error message (optional)
+ * @param {String} name the name of the exception
+ * @param {String} message the error message (optional)
  */
 PJ.Exception = function(name, message) {
     this.name = PJ.isString(name) ? (name.length !== 0 ? name : 'Exception') : 'Exception';
@@ -221,7 +221,7 @@ PJ.Exception = function(name, message) {
  * Illegal Argument Exception
  * <p>Thrown when one or more arguments are not valid for any reason.</p>
  *
- * @param {string} message the error message (optional)
+ * @param {String} message the error message (optional)
  */
 PJ.IllegalArgumentException = function (message) {
     PJ.Exception.call(this, 'IllegalArgumentException', message);
@@ -233,7 +233,7 @@ PJ.IllegalArgumentException.prototype.constructor = PJ.IllegalArgumentException;
  * Unsupported Operation Exception
  * <p>Thrown when a method has not yet been implemented or is not supported.</p>
  *
- * @param {string} message the error message (optional)
+ * @param {String} message the error message (optional)
  */
 PJ.UnsupportedOperationException = function (message) {
     PJ.Exception.call(this, 'UnsupportedOperationException', message);
@@ -245,7 +245,7 @@ PJ.UnsupportedOperationException.prototype.constructor = PJ.UnsupportedOperation
  * Not Numeric Excepion
  * <p>Thrown if a numeric value was expected but some non numeric value was found instead.</p>
  *
- * @param {string} type of the actual object type found. (optional)
+ * @param {String} type of the actual object type found. (optional)
  */
 PJ.NotNumericException = function (type) {
     var typeStr = ((typeof type !== 'undefined') && (type !== null)) ? (', but found:' +type.toString()+ '.') : '.';
