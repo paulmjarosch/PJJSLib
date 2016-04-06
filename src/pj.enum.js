@@ -28,7 +28,7 @@ PJ.EnumConstantNotPresentException.prototype.constructor = PJ.EnumConstantNotPre
  * <p>Checks each argument for validity. If an argument fails the validity test, an exception is thrown.</p>
  *
  * @param {...String} _args variable length parameter list of strings as the names for each Enum Constant.
- * @throws {PJ.IllegalArgumentException} thrown if and invalid identifier is given or if an identifier is given twice
+ * @throws {PJ.IllegalArgumentException} thrown if an invalid identifier is given or if an identifier is given twice
  */
 PJ.Enum = function (_args) {
     var _values = [];
@@ -76,11 +76,12 @@ PJ.Enum = function (_args) {
      * Get the Enumeration Constant by its name.
      *
      * @param {String} name the name of the enum constant. This must match exactly, including case.
+     * @return {Number} the ordinal value of the numeration constant
      * @throws {PJ.IllegalArgumentException} if name is not set, not a string, or not a valid identifier
      * @throws {PJ.EnumConstantNotPresentException} if there is no constant with the specified name
      */
     PJ.Enum.prototype.valueOf = function(name) {
-        if (!PJ.isSet(name)) {
+        if ((typeof name === 'undefined') || (name === null)) {
             throw new PJ.IllegalArgumentException("name is required");
         }
         else if (!PJ.isString(name)) {
