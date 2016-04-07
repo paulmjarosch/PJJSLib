@@ -24,6 +24,41 @@ PJ.TruthTable = function (expression, var_count) {
         throw new PJ.IllegalArgumentException("'var_count' parameter must be a positive integer.");
     }
 
+    //private properties
+    var _expr = expression,
+        _varCount = var_count,
+        _rowCount = Math.pow(2, var_count),
+        _results = []
+    ;
+
+    //private functions
+    /**
+     * Get the variable array for the specified row.
+     * @param {Number} row the row index
+     * @param {Number} vCount the total number of rows
+     * @returns {Array} the variable array for the specified row
+     */
+    var _getVariableArray = function (row, vCount) {
+        //convert to binary string and pad
+        var seq = PJ.StringUtils.pad(row.toString(2), vCount, '0', PJ.StringUtils.PAD_LEFT);
+
+        //translate into boolean array
+        var ar = new Array(seq.length);
+        for (var i = 0; i < ar.length; i++) {
+            ar[i] = (seq.charAt(i) === '1');
+        }
+
+        return ar;
+    };
+
+    //calculate results
+    for (var curRow = 0; curRow < _rowCount; curRow++) {
+        var v = _getVariableArray(curRow, _varCount);
+        v.push(PJ.parseBoolean(eval(_expr)));
+
+        _results[curRow] = v;
+    }
+
     //public methods
     /**
      * The raw results array.
@@ -32,7 +67,7 @@ PJ.TruthTable = function (expression, var_count) {
      * @returns {Array} array of boolean values used to fill a truth table
      */
     this.getResults = function () {
-        return this._results.slice();
+        return _results.slice();
     };
 
     /**
@@ -58,19 +93,19 @@ PJ.TruthTable = function (expression, var_count) {
         html += "<thead><tr>";
 
         //variables
-        for (var i = 0; i < this._varCount; i++) {
+        for (var i = 0; i < _varCount; i++) {
             html += "<th>v["+ i +"]</th>";
         }
 
         //expression
-        html += "<th>"+ this._expr +"</th>";
+        html += "<th>"+ _expr +"</th>";
 
         html += "</tr></thead>";
         //header row - end
 
         //data rows - start
-        for (var r = 0; r < this._results.length; r++) {
-            var row = this._results[r];
+        for (var r = 0; r < _results.length; r++) {
+            var row = _results[r];
             html += "<tr>";
 
             //row values - start
@@ -95,37 +130,4 @@ PJ.TruthTable = function (expression, var_count) {
 
         return html;
     };
-
-    //private properties
-    this._expr = expression,
-    this._varCount = var_count,
-    this._rowCount = Math.pow(2, var_count),
-    this._results = [];
-
-    /**
-     * Get the variable array for the specified row.
-     * @param {Number} row the row index
-     * @param {Number} vCount the total number of rows
-     * @returns {Array} the variable array for the specified row
-     */
-    var getVariableArray = function (row, vCount) {
-        //convert to binary string and pad
-        var seq = PJ.StringUtils.pad(row.toString(2), vCount, '0', PJ.StringUtils.PAD_LEFT);
-
-        //translate into boolean array
-        var ar = new Array(seq.length);
-        for (var i = 0; i < ar.length; i++) {
-            ar[i] = (seq.charAt(i) === '1');
-        }
-
-        return ar;
-    };
-
-    //calculate results
-    for (var curRow = 0; curRow < this._rowCount; curRow++) {
-        var v = getVariableArray(curRow, this._varCount);
-        v.push(PJ.parseBoolean(eval(this._expr)));
-
-        this._results[curRow] = v;
-    }
 };
