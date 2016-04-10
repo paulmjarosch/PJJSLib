@@ -44,7 +44,7 @@ PJ.StringUtils.PAD_RIGHT = 1;
  * Pad Both option
  * @type Number
  */
-PJ.StringUtils.PAD_LEFT = 2;
+PJ.StringUtils.PAD_BOTH = 2;
 
 //static methods
 /**
@@ -54,7 +54,7 @@ PJ.StringUtils.PAD_LEFT = 2;
  *
  * @param {String} qs the query string to process. This can include the preceeding question mark symbol. This symbol will be ignored.
  *
- * @returns array of key/value pairs
+ * @returns {Array} array of key/value pairs
  */
 PJ.StringUtils.parseQueryString = function (qs) {
     var params = [];//create params array

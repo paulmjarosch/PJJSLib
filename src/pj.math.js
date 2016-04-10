@@ -282,6 +282,7 @@ PJ.Math.midpoint = function (pt1, pt2) {
  *
  * @param {...Number} _args the sides lengths of the 'triangle' (array of numbers)
  * @returns {Number} the hypotenuse length
+ * @throws {IllegalArgumentException} thrown if there are less than 2 parameters or if any parameter is not an integer
  */
 PJ.Math.hypotenuse = function (_args) {
     if (arguments.length < 2) {
@@ -419,7 +420,7 @@ PJ.Math.cubic = function (a, b, c, d) {
 /**
  * Calculates the factors of the specified a number.
  *
- * @param {Number} n the number to get the factors of. Must be integer.
+ * @param {Number} n the number to get the factors of. Must be an integer.
  * @returns {Array} the factors of n
  */
 PJ.Math.nFactorize = function (n) {
@@ -446,22 +447,22 @@ PJ.Math.nFactorize = function (n) {
 /**
  * Calculates the number of permutations.
  *
- * @param {Number} n the number pf objects
+ * @param {Number} n the number of objects
  * @param {Number|Array} r [<i>OPTIONAL</i>] <br>
  * <ol>
  *      <li>if an {Number}, then this is the number of objects taken at a time.</li>
- *      <li>if an {Array} of integers, then this is the list of like occurances</li>
+ *      <li>if an {Array} of integers, then this is the list of like occurences</li>
  *      <li>if omitted, then all objects are taken at a time</li>
  * </ol>
  *
- * @returns {Integer} the number of permutations.
+ * @returns {Number} the number of permutations.
  */
 PJ.Math.nPr = function (n, r) {
     if (!PJ.isNumber(n)) {
         throw new PJ.IllegalArgumentException('Parameter n must be a number.');
     }
-    if (!PJ.isNumber(r)) {
-        throw new PJ.IllegalArgumentException('Parameter r must be a number.');
+    if (!PJ.isNumber(r) && !PJ.isArray(r)) {
+        throw new PJ.IllegalArgumentException('Parameter r must be a number or an array.');
     }
 
     var _n = Math.abs(Math.floor(n)),
@@ -505,7 +506,7 @@ PJ.Math.nPr = function (n, r) {
  * @param {Integer} r the number of objects taken at a time.
  * @param {Boolean} b [<i>OPTIONAL</i>] flag to indicate repetition
  *
- * @returns {Integer} the number of combinations.
+ * @returns {Number} the number of combinations.
  */
 PJ.Math.nCr = function (n, r, b) {
     if (!PJ.isNumber(n)) {

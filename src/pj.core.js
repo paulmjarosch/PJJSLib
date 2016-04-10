@@ -75,7 +75,7 @@ PJ.typeOf = function (obj) {
 /**
  * Compares the type of obj against type.
  * @param {Object} obj the object to test
- * @param {String} type the object's type
+ * @param {String} type the object type to test for
  * @returns {Boolean} true if the object of type; otherwise false
  */
 PJ.isTypeOf = function (obj, type) {
@@ -152,7 +152,7 @@ PJ.isString = function (obj) {
  * <li>All other cases return false.</li>
  * </ul></p>
  *
- * @param {Object} obj the object to test
+ * @param {Object} obj the object to parse
  * @returns {Boolean} the boolean value the object represents or false if a boolean value could not be determined
  */
 PJ.parseBoolean = function (obj) {
