@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="author" content="Paul M. Jarosch"/>
+        <meta name="description" content="PJ's JavaScript Library API Documentation"/>
+        <meta name="keywords" content="javascript, library, api, documentation"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="api_doc.css" rel="stylesheet" type="text/css" media="all"/>
+        <title>PJ's JavaScript Library v4.0 API Documentation -  String Utils</title>
+    </head>
+    <body>
+        <div id="nav">
+            <div><a href="index.html">Overview</a></div>
+            <h1>Modules</h1>
+            <div class="h1">
+                <div><a href="pj.core.html">Core</a></div>
+                <h2>Utility</h2>
+                <div class="h2">
+                    <div><a href="pj.math.html">Math</a></div>
+                    <div><a href="pj.numeric.html">Numeric</a></div>
+                    <div><a href="pj.random.html">Random</a></div>
+                    <div><a href="pj.stringutils.html">String Utils</a></div>
+                </div>
+                <h2>Object</h2>
+                <div class="h2">
+                    <div><a href="pj.enum.html">Enum</a></div>
+                    <div><a href="pj.exception.html">Exception</a>
+                        <ul class="bulletless">
+                            <li><a href="pj.exception_ecnpe.html">EnumConstantNotPresentException</a></li>
+                            <li><a href="pj.exception_iae.html">IllegalArgumentException</a></li>
+                            <li><a href="pj.exception_nne.html">NotNumericException</a></li>
+                            <li><a href="pj.exception_uoe.html">UnsupportedOperationException</a></li>
+                        </ul>
+                    </div>
+                    <div><a href="pj.truthtable.html">Truth Table</a></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="content">
+            <h1>PJ's JavaScript Library API Documentation</h1>
+            <div class="h1">
+                <div><strong>Version:</strong> 4.0</div>
+                <div class="pageNav">
+                    <a href="#requirements">Requirements</a><a href="#fields">Fields</a><a href="#methods">Methods</a>
+                </div>
+
+                <h2>PJ.StringUtils</h2>
+                <div class="h2">
+                    <div><label>Since:</label>4.0</div>
+                    <div><label>File(s):</label>pj.utils.string.js, pj.utils.string.min.js</div>
+                    <br>
+                    <p>String Utilities</p>
+
+                    <h3 id="requirements">Requirements</h3>
+                    <div class="h3">
+                        <ul>
+                            <li><a href="pj.core.html">Core Module</a></li>
+                            <li><a href="pj.numeric.html">Numeric Module</a></li>
+                        </ul>
+                    </div>
+
+                    <h3 id="fields">Fields</h3>
+                    <div class="h3">
+                        <div class="field">
+                            <div>PAD_BOTH</div>
+                            <div><label>Type:</label>Number</div>
+                            <div><label>Value:</label><code>2</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>Pad Both</p>
+                        </div>
+                        <div class="field">
+                            <div>PAD_LEFT</div>
+                            <div><label>Type:</label>Number</div>
+                            <div><label>Value:</label><code>0</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>Pad Left</p>
+                        </div>
+                        <div class="field">
+                            <div>PAD_RIGHT</div>
+                            <div><label>Type:</label>Number</div>
+                            <div><label>Value:</label><code>1</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>Pad Right</p>
+                        </div>
+                    </div>
+
+                    <h3 id="methods">Methods</h3>
+                    <div class="h3">
+                        <div class="function">
+                            <div class="sig">
+                                <i>String</i><span><span class="name">pad</span>(<span class="paramlist"><i>String</i>str<span class="opt">[, <i>Number</i>len<span class="opt">[, <i>String</i>ch<span class="opt">[, <i>Number</i>opt]</span>]</span>]</span></span>)</span>
+                            </div>
+                            <div class="details">
+                                <p>Pads a string with the specified character until the specified length is reached.</p>
+                                <p>If the length of the string is greater than or equal to len, then the original string is returned.</p>
+                                <div><label>Since:</label>4.0</div>
+                                <div><label>Parameters:</label></div>
+                                <div class="item"><i style="vertical-align: top;">String</i><span class="name">str</span><span style="display: inline-block;"><span>the to string to pad. Defaults to empty string.</span></span></div>
+                                <div class="item"><i style="vertical-align: top;">Number</i><span class="name">len</span><span style="display: inline-block;"><span>the total length of the string after padding. Defaults to length of string.</span></span></div>
+                                <div class="item"><i style="vertical-align: top;">String</i><span class="name">ch</span><span style="display: inline-block;"><span>the character (or string) to pad with. Defaults to empty space ( ).</span></span></div>
+                                <div class="item"><i style="vertical-align: top;">Number</i><span class="name">opt</span><span style="display: inline-block;"><span>the direction to pad.</span></span>One of the following PJ.StringUtils.PAD_BOTH, PJ.StringUtils.PAD_LEFT, PJ.StringUtils.PAD_RIGHT. Defaults to PJ.StringUtils.PAD_BOTH.</div>
+                            </div>
+                            <div class="details return">
+                                <div><label>Returns:</label>String</div>
+                                <p>The padded string.</p>
+                            </div>
+                        </div>
+                        <div class="function">
+                            <div class="sig">
+                                <i>Array</i><span><span class="name">parseQueryString</span>(<span class="paramlist"><i>String</i>qa</span>)</span>
+                            </div>
+                            <div class="details">
+                                <p>Parse Query String into array of key / value pairs.</p>
+                                <p>If there are multiple keys with the same name, the value for that key will be an array of values. This can process multiple keys names with and without brackets..</p>
+                                <div><label>Since:</label>4.0</div>
+                                <div><label>Parameters:</label></div>
+                                <div class="item"><i style="vertical-align: top;">String</i><span class="name">qs</span><span style="display: inline-block;"><span>the query string to process.</span></span> This can include the preceeding question mark symbol. This symbol will be ignored.</div>
+                            </div>
+                            <div class="details return">
+                                <div><label>Returns:</label>Number</div>
+                                <p>Array of key/value pairs.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pageNav">
+                    <a href="#requirements">Requirements</a><a href="#fields">Fields</a><a href="#methods">Methods</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer">© 2015 - 2016 Paul M. Jarosch</div>
+    </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="author" content="Paul M. Jarosch"/>
+        <meta name="description" content="PJ's JavaScript Library API Documentation"/>
+        <meta name="keywords" content="javascript, library, api, documentation"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="api_doc.css" rel="stylesheet" type="text/css" media="all"/>
+        <title>PJ's JavaScript Library v4.0 API Documentation</title>
+    </head>
+    <body>
+        <div id="nav">
+            <div><a href="index.html">Overview</a></div>
+            <h1>Modules</h1>
+            <div class="h1">
+                <div><a href="pj.core.html">Core</a></div>
+                <h2>Utility</h2>
+                <div class="h2">
+                    <div><a href="pj.math.html">Math</a></div>
+                    <div><a href="pj.numeric.html">Numeric</a></div>
+                    <div><a href="pj.random.html">Random</a></div>
+                    <div><a href="pj.stringutils.html">String Utils</a></div>
+                </div>
+                <h2>Object</h2>
+                <div class="h2">
+                    <div><a href="pj.enum.html">Enum</a></div>
+                    <div><a href="pj.exception.html">Exception</a>
+                        <ul class="bulletless">
+                            <li><a href="pj.exception_ecnpe.html">EnumConstantNotPresentException</a></li>
+                            <li><a href="pj.exception_iae.html">IllegalArgumentException</a></li>
+                            <li><a href="pj.exception_nne.html">NotNumericException</a></li>
+                            <li><a href="pj.exception_uoe.html">UnsupportedOperationException</a></li>
+                        </ul>
+                    </div>
+                    <div><a href="pj.truthtable.html">Truth Table</a></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="content">
+            <h1>PJ's JavaScript Library API Documentation</h1>
+            <div class="h1">
+                <div><strong>Version:</strong> 4.0</div>
+
+                <h2>Overview</h2>
+                <div class="h2">
+                    <p>This documentation is the API specification for my JavaScript library.</p>
+
+                    <h3>Technical Notes</h3>
+                    <div class="h3">
+                        <ol class="space">
+                            <li>
+                                <b>On the module pages:</b>
+                                <ul>
+                                    <li>For the <b>Fields</b> and <b>Methods</b> sections, only those "publicly" accessible are listed.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <b>variable types and values</b>
+                                <ul>
+                                    <li><b>Number</b>: For parameters of this type, if the method expects a specific type of number (such as an integer), then the documentation will clarify that.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <i>keyword</i>: <b>set</b>
+                                <p>In some documentation, I may use the term <b>set</b> in several the descriptions. This means that the variable is <b>not</b> <code>undefined</code> and <b>not</b> <code>null</code>.</p>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <h3>Changes</h3>
+                    <div class="h3">
+                        <p>In this major version, I reorganized many things, cleaned up code and removed bad / ugly code. This is also the first major version to be publicly available.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer">© 2015 - 2016 Paul M. Jarosch</div>
+    </body>
+</html>

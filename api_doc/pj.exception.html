@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="author" content="Paul M. Jarosch"/>
+        <meta name="description" content="PJ's JavaScript Library API Documentation"/>
+        <meta name="keywords" content="javascript, library, api, documentation"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="api_doc.css" rel="stylesheet" type="text/css" media="all"/>
+        <title>PJ's JavaScript Library v4.0 API Documentation - Exception</title>
+    </head>
+    <body>
+        <div id="nav">
+            <div><a href="index.html">Overview</a></div>
+            <h1>Modules</h1>
+            <div class="h1">
+                <div><a href="pj.core.html">Core</a></div>
+                <h2>Utility</h2>
+                <div class="h2">
+                    <div><a href="pj.math.html">Math</a></div>
+                    <div><a href="pj.numeric.html">Numeric</a></div>
+                    <div><a href="pj.random.html">Random</a></div>
+                    <div><a href="pj.stringutils.html">String Utils</a></div>
+                </div>
+                <h2>Object</h2>
+                <div class="h2">
+                    <div><a href="pj.enum.html">Enum</a></div>
+                    <div><a href="pj.exception.html">Exception</a>
+                        <ul class="bulletless">
+                            <li><a href="pj.exception_ecnpe.html">EnumConstantNotPresentException</a></li>
+                            <li><a href="pj.exception_iae.html">IllegalArgumentException</a></li>
+                            <li><a href="pj.exception_nne.html">NotNumericException</a></li>
+                            <li><a href="pj.exception_uoe.html">UnsupportedOperationException</a></li>
+                        </ul>
+                    </div>
+                    <div><a href="pj.truthtable.html">Truth Table</a></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="content">
+            <h1>PJ's JavaScript Library API Documentation</h1>
+            <div class="h1">
+                <div><strong>Version:</strong> 4.0</div>
+                <div class="pageNav">
+                    <a href="constr">Constructor</a><a href="#fields">Fields</a><a href="#methods">Methods</a>
+                </div>
+
+                <h2>PJ.Exception</h2>
+                <div class="h2">
+                    <div><label>Since:</label>2.0</div>
+                    <div><label>File(s):</label>pj.core.js, pj.core.min.js</div>
+                    <div id="subclasses">
+                        <label>Subclasses:</label>
+                        <a href="pj.exception_ecnpe.html">EnumConstantNotPresentException</a>,
+                        <a href="pj.exception_iae.html">IllegalArgumentException</a>,
+                        <a href="pj.exception_nne.html">NotNumericException</a>,
+                        <a href="pj.exception_uoe.html">UnsupportedOperationException</a>
+                    </div>
+                    <br>
+                    <p>Exception Class construct with subclasses. Can be used with <code>instanceof</code> to take actions based on exception instance.</p>
+
+                    <h3 id="constr">Constructor</h3>
+                    <div class="h3">
+                        <div class="function">
+                            <div class="sig">
+                                <span class="name">Exception</span>(<span class="paramlist"><i>String</i>name<span class="opt">[, <i>String</i>message]</span></span>)
+                            </div>
+                            <div class="details">
+                                <div><label>Since:</label>2.0</div>
+                                <p>Constructs a new generic Exception.</p>
+                                <div><label>Parameters:</label></div>
+                                <div class="item"><i style="vertical-align: top;">String</i><span class="name">name</span><span style="display: inline-block;"><span>The name of exception. Defaults to "Exception".</span></span></div>
+                                <div class="item"><i style="vertical-align: top;">String</i><span class="name">message</span><span style="display: inline-block;"><span>Message about the exception.</span></span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 id="fields">Fields</h3>
+                    <div class="h3">
+                        <div class="field">
+                            <div>name</div>
+                            <div><label>Type:</label>String</div>
+                            <div><label>Value:</label><code>the specified name</code></div>
+                            <div><label>Since:</label>2.0</div>
+                            <p>The name of exception. Defaults to "Exception".</p>
+                        </div>
+                        <div class="field">
+                            <div>message</div>
+                            <div><label>Type:</label>String</div>
+                            <div><label>Value:</label><code>The detailed error message.</code></div>
+                            <div><label>Since:</label>2.0</div>
+                            <p>A message with the details of the error. Defaults to empty string.</p>
+                        </div>
+                    </div>
+
+                    <h3 id="methods">Methods</h3>
+                    <div class="h3">
+                        <div class="function">
+                            <div class="sig">
+                                <i>String</i><span><span class="name">toString</span>()</span>
+                            </div>
+                            <div class="details">
+                                <p>Get the string representation of this Exception.</p>
+                                <div><label>Since:</label>2.0</div>
+                                <div><label>Overrides:</label><code>toString</code> in Object</div>
+                            </div>
+                            <div class="details return">
+                                <div><label>Returns:</label>String</div>
+                                <p>If there was a message specified, then the returned string includes that message. Otherwise, just the name of the exception is returned.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pageNav">
+                    <a href="constr">Constructor</a><a href="#fields">Fields</a><a href="#methods">Methods</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer">© 2015 - 2016 Paul M. Jarosch</div>
+    </body>
+</html>

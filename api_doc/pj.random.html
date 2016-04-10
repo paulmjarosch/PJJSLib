@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="author" content="Paul M. Jarosch"/>
+        <meta name="description" content="PJ's JavaScript Library API Documentation"/>
+        <meta name="keywords" content="javascript, library, api, documentation"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="api_doc.css" rel="stylesheet" type="text/css" media="all"/>
+        <title>PJ's JavaScript Library v4.0 API Documentation - Random</title>
+    </head>
+    <body>
+        <div id="nav">
+            <div><a href="index.html">Overview</a></div>
+            <h1>Modules</h1>
+            <div class="h1">
+                <div><a href="pj.core.html">Core</a></div>
+                <h2>Utility</h2>
+                <div class="h2">
+                    <div><a href="pj.math.html">Math</a></div>
+                    <div><a href="pj.numeric.html">Numeric</a></div>
+                    <div><a href="pj.random.html">Random</a></div>
+                    <div><a href="pj.stringutils.html">String Utils</a></div>
+                </div>
+                <h2>Object</h2>
+                <div class="h2">
+                    <div><a href="pj.enum.html">Enum</a></div>
+                    <div><a href="pj.exception.html">Exception</a>
+                        <ul class="bulletless">
+                            <li><a href="pj.exception_ecnpe.html">EnumConstantNotPresentException</a></li>
+                            <li><a href="pj.exception_iae.html">IllegalArgumentException</a></li>
+                            <li><a href="pj.exception_nne.html">NotNumericException</a></li>
+                            <li><a href="pj.exception_uoe.html">UnsupportedOperationException</a></li>
+                        </ul>
+                    </div>
+                    <div><a href="pj.truthtable.html">Truth Table</a></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="content">
+            <h1>PJ's JavaScript Library API Documentation</h1>
+            <div class="h1">
+                <div><strong>Version:</strong> 4.0</div>
+                <div class="pageNav">
+                    <a href="#requirements">Requirements</a><a href="#fields">Fields</a><a href="#methods">Methods</a>
+                </div>
+
+                <h2>PJ.Random</h2>
+                <div class="h2">
+                    <div><label>Since:</label>3.0</div>
+                    <div><label>File(s):</label>pj.random.js, pj.random.min.js</div>
+                    <br>
+                    <p>This module contains utility method to generate random values.</p>
+
+                    <h3 id="requirements">Requirements</h3>
+                    <div class="h3">
+                        <ul>
+                            <li><a href="pj.core.html">Core Module</a></li>
+                            <li><a href="pj.numeric.html">Numeric Module</a></li>
+                        </ul>
+                    </div>
+
+                    <h3 id="fields">Fields</h3>
+                    <div class="h3">
+                        <div class="field">
+                            <div>MAX_PRECISION</div>
+                            <div><label>Type:</label>Number</div>
+                            <div><label>Value:</label><code>17</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>The largest number digits after a decimal point.</p>
+                        </div>
+                        <div class="field">
+                            <div>MIN_PRECISION</div>
+                            <div><label>Type:</label>Number</div>
+                            <div><label>Value:</label><code>0</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>The smallest number of digits after a decimal point.</p>
+                        </div>
+                    </div>
+
+                    <h3 id="methods">Methods</h3>
+                    <div class="h3">
+                        <div class="function">
+                            <div class="sig">
+                                <i>Number</i><span><span class="name">nextBoolean</span>()</span>
+                            </div>
+                            <div class="details">
+                                <p>Generate a random boolean value.</p>
+                                <div><label>Since:</label>4.0</div>
+                            </div>
+                            <div class="details return">
+                                <div><label>Returns:</label>Boolean</div>
+                                <p>The next boolean.</p>
+                            </div>
+                        </div>
+                        <div class="function">
+                            <div class="sig">
+                                <i>Number</i><span><span class="name">nextByte</span>(<span class="paramlist">[<i>Boolean</i>signed]</span>)</span>
+                            </div>
+                            <div class="details">
+                                <p>Generate a byte (8-bit) value.</p>
+                                <div><label>Since:</label>4.0</div>
+                                <div><label>Parameters:</label></div>
+                                <div class="item"><i style="vertical-align: top;">Boolean</i><span class="name">signed</span><span style="display: inline-block;">true; signed; otherwise: unsigned</span></div>
+                            </div>
+                            <div class="details return">
+                                <div><label>Returns:</label>Number</div>
+                                <p>The next byte.</p>
+                            </div>
+                        </div>
+                        <div class="function">
+                            <div class="sig">
+                                <i>Number</i><span><span class="name">nextInteger</span>(<span class="paramlist">[<i>Boolean</i>signed]</span>)</span>
+                            </div>
+                            <div class="details">
+                                <p>Generate a integer (32-bit) value.</p>
+                                <div><label>Since:</label>4.0</div>
+                                <div><label>Parameters:</label></div>
+                                <div class="item"><i style="vertical-align: top;">Boolean</i><span class="name">signed</span><span style="display: inline-block;">true; signed; otherwise: unsigned</span></div>
+                            </div>
+                            <div class="details return">
+                                <div><label>Returns:</label>Number</div>
+                                <p>The next integer.</p>
+                            </div>
+                        </div>
+                        <div class="function">
+                            <div class="sig">
+                                <i>Number</i><span><span class="name">nextLong</span>(<span class="paramlist">[<i>Boolean</i>signed]</span>)</span>
+                            </div>
+                            <div class="details">
+                                <p>Generate a long (64-bit) value.</p>
+                                <div><label>Since:</label>4.0</div>
+                                <div><label>Parameters:</label></div>
+                                <div class="item"><i style="vertical-align: top;">Boolean</i><span class="name">signed</span><span style="display: inline-block;">true; signed; otherwise: unsigned</span></div>
+                            </div>
+                            <div class="details return">
+                                <div><label>Returns:</label>Number</div>
+                                <p>The next long.</p>
+                            </div>
+                        </div>
+                        <div class="function">
+                            <div class="sig">
+                                <i>Number</i><span><span class="name">nextNumber</span>(<span class="paramlist"><i>Number</i>min, <i>Number</i>max, <i>Number</i>precision</span>)</span>
+                            </div>
+                            <div class="details">
+                                <p>Generate a number based on min, max and precision.</p>
+                                <div><label>Since:</label>4.0</div>
+                                <div><label>Parameters:</label></div>
+                                <div class="item"><i style="vertical-align: top;">Number</i><span class="name">min</span><span style="display: inline-block;">minimum possible value (inclusive)</span></div>
+                                <div class="item"><i style="vertical-align: top;">Number</i><span class="name">max</span><span style="display: inline-block;">maximum possible value (inclusive)</span></div>
+                                <div class="item"><i style="vertical-align: top;">Number</i><span class="name">precision</span><span style="display: inline-block;">number of decimal places</span></div>
+                            </div>
+                            <div class="details return">
+                                <div><label>Returns:</label>Number</div>
+                                <p>The next number based on parameters.</p>
+                            </div>
+                        </div>
+                        <div class="function">
+                            <div class="sig">
+                                <i>Number</i><span><span class="name">nextShort</span>(<span class="paramlist">[<i>Boolean</i>signed]</span>)</span>
+                            </div>
+                            <div class="details">
+                                <p>Generate a short (16-bit) value.</p>
+                                <div><label>Since:</label>4.0</div>
+                                <div><label>Parameters:</label></div>
+                                <div class="item"><i style="vertical-align: top;">Boolean</i><span class="name">signed</span><span style="display: inline-block;">true; signed; otherwise: unsigned</span></div>
+                            </div>
+                            <div class="details return">
+                                <div><label>Returns:</label>Number</div>
+                                <p>The next short.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pageNav">
+                    <a href="#requirements">Requirements</a><a href="#fields">Fields</a><a href="#methods">Methods</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer">© 2015 - 2016 Paul M. Jarosch</div>
+    </body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="author" content="Paul M. Jarosch"/>
+        <meta name="description" content="PJ's JavaScript Library API Documentation"/>
+        <meta name="keywords" content="javascript, library, api, documentation"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="api_doc.css" rel="stylesheet" type="text/css" media="all"/>
+        <title>PJ's JavaScript Library v4.0 API Documentation - Core</title>
+    </head>
+    <body>
+        <div id="nav">
+            <div><a href="index.html">Overview</a></div>
+            <h1>Modules</h1>
+            <div class="h1">
+                <div><a href="pj.core.html">Core</a></div>
+                <h2>Utility</h2>
+                <div class="h2">
+                    <div><a href="pj.math.html">Math</a></div>
+                    <div><a href="pj.numeric.html">Numeric</a></div>
+                    <div><a href="pj.random.html">Random</a></div>
+                    <div><a href="pj.stringutils.html">String Utils</a></div>
+                </div>
+                <h2>Object</h2>
+                <div class="h2">
+                    <div><a href="pj.enum.html">Enum</a></div>
+                    <div><a href="pj.exception.html">Exception</a>
+                        <ul class="bulletless">
+                            <li><a href="pj.exception_ecnpe.html">EnumConstantNotPresentException</a></li>
+                            <li><a href="pj.exception_iae.html">IllegalArgumentException</a></li>
+                            <li><a href="pj.exception_nne.html">NotNumericException</a></li>
+                            <li><a href="pj.exception_uoe.html">UnsupportedOperationException</a></li>
+                        </ul>
+                    </div>
+                    <div><a href="pj.truthtable.html">Truth Table</a></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="content">
+            <h1>PJ's JavaScript Library API Documentation</h1>
+            <div class="h1">
+                <div><strong>Version:</strong> 4.0</div>
+                <div class="pageNav">
+                    <a href="#fields">Fields</a><a href="#methods">Methods</a>
+                </div>
+
+                <h2>PJ</h2>
+                <div class="h2">
+                    <div><label>File(s):</label>pj.core.js, pj.core.min.js</div>
+                    <br>
+                    <p>Base methods and values for this library. Required by all modules.</p>
+
+                    <h3 id="fields">Fields</h3>
+                    <div class="h3">
+                        <div class="field">
+                            <div>DATA_TYPE_ARRAY</div>
+                            <div><label>Type:</label>String</div>
+                            <div><label>Value:</label><code>array</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>Array Data Type</p>
+                        </div>
+                        <div class="field">
+                            <div>DATA_TYPE_BOOLEAN</div>
+                            <div><label>Type:</label>String</div>
+                            <div><label>Value:</label><code>boolean</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>Boolean Data Type</p>
+                        </div>
+                        <div class="field">
+                            <div>DATA_TYPE_DATE</div>
+                            <div><label>Type:</label>String</div>
+                            <div><label>Value:</label><code>date</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>Date Data Type</p>
+                        </div>
+                        <div class="field">
+                            <div>DATA_TYPE_NUMBER</div>
+                            <div><label>Type:</label>String</div>
+                            <div><label>Value:</label><code>number</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>Number Data Type</p>
+                        </div>
+                        <div class="field">
+                            <div>DATA_TYPE_OBJECT</div>
+                            <div><label>Type:</label>String</div>
+                            <div><label>Value:</label><code>object</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>Object Data Type</p>
+                        </div>
+                        <div class="field">
+                            <div>DATA_TYPE_STRING</div>
+                            <div><label>Type:</label>String</div>
+                            <div><label>Value:</label><code>string</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>String Data Type</p>
+                        </div>
+                    </div>
+
+                    <h3 id="methods">Methods</h3>
+                    <div class="h3">
+                        <div class="function">
+                            <div class="sig">
+                                <i>Boolean</i><span><span class="name">isTypeOf</span>(<span class="paramlist"><i>Object</i>obj, <i>String</i>type</span>)</span>
+                            </div>
+                            <div class="details">
+                                <p>Compares the type of object against the specified type.</p>
+                                <div><label>Since:</label>2.0</div>
+                                <div><label>Parameters:</label></div>
+                                <div class="item"><i style="vertical-align: top;">Object</i><span class="name">obj</span><span style="display: inline-block;"><span>the object to test</span></span></div>
+                                <div class="item"><i style="vertical-align: top;">String</i><span class="name">type</span><span style="display: inline-block;"><span>the object type to test for</span></span></div>
+                            </div>
+                            <div class="details return">
+                                <div><label>Returns:</label>Boolean</div>
+                                <p>True if the object of type; otherwise false.</p>
+                            </div>
+                        </div>
+                        <div class="function">
+                            <div class="sig">
+                                <i>Boolean</i><span><span class="name">isArray</span>(<span class="paramlist"><i>Object</i>obj</span>)</span>
+                            </div>
+                            <div class="details">
+                                <p>Checks if the object is an array.</p>
+                                <div><label>Since:</label>3.0</div>
+                                <div><label>Parameters:</label></div>
+                                <div class="item"><i style="vertical-align: top;">Object</i><span class="name">obj</span><span style="display: inline-block;"><span>the object to test</span></span></div>
+                            </div>
+                            <div class="details return">
+                                <div><label>Returns:</label>Boolean</div>
+                                <p>True if obj is an array; false otherwise</p>
+                            </div>
+                        </div>
+                        <div class="function">
+                            <div class="sig">
+                                <i>Boolean</i><span><span class="name">isBoolean</span>(<span class="paramlist"><i>Object</i>obj</span>)</span>
+                            </div>
+                            <div class="details">
+                                <p>Checks if the object is a boolean.</p>
+                                <div><label>Since:</label>3.0</div>
+                                <div><label>Parameters:</label></div>
+                                <div class="item"><i style="vertical-align: top;">Object</i><span class="name">obj</span><span style="display: inline-block;"><span>the object to test</span></span></div>
+                            </div>
+                            <div class="details return">
+                                <div><label>Returns:</label>Boolean</div>
+                                <p>True if obj is a boolean; false otherwise</p>
+                            </div>
+                        </div>
+                        <div class="function">
+                            <div class="sig">
+                                <i>Boolean</i><span><span class="name">isDate</span>(<span class="paramlist"><i>Object</i>obj</span>)</span>
+                            </div>
+                            <div class="details">
+                                <p>Checks if the object is a date.</p>
+                                <div><label>Since:</label>3.0</div>
+                                <div><label>Parameters:</label></div>
+                                <div class="item"><i style="vertical-align: top;">Object</i><span class="name">obj</span><span style="display: inline-block;"><span>the object to test</span></span></div>
+                            </div>
+                            <div class="details return">
+                                <div><label>Returns:</label>Boolean</div>
+                                <p>True if obj is a date; false otherwise</p>
+                            </div>
+                        </div>
+                        <div class="function">
+                            <div class="sig">
+                                <i>Boolean</i><span><span class="name">isNumber</span>(<span class="paramlist"><i>Object</i>obj</span>)</span>
+                            </div>
+                            <div class="details">
+                                <p>Checks if the object is a number.</p>
+                                <div><label>Since:</label>3.0</div>
+                                <div><label>Parameters:</label></div>
+                                <div class="item"><i style="vertical-align: top;">Object</i><span class="name">obj</span><span style="display: inline-block;"><span>the object to test</span></span></div>
+                            </div>
+                            <div class="details return">
+                                <div><label>Returns:</label>Boolean</div>
+                                <p>True if obj is a number; false otherwise</p>
+                            </div>
+                        </div>
+                        <div class="function">
+                            <div class="sig">
+                                <i>Boolean</i><span><span class="name">isObject</span>(<span class="paramlist"><i>Object</i>obj</span>)</span>
+                            </div>
+                            <div class="details">
+                                <p>Checks if the object is a plain object.</p>
+                                <div><label>Since:</label>3.0</div>
+                                <div><label>Parameters:</label></div>
+                                <div class="item"><i style="vertical-align: top;">Object</i><span class="name">obj</span><span style="display: inline-block;"><span>the object to test</span></span></div>
+                            </div>
+                            <div class="details return">
+                                <div><label>Returns:</label>Boolean</div>
+                                <p>True if obj is an object; false otherwise</p>
+                            </div>
+                        </div>
+                        <div class="function">
+                            <div class="sig">
+                                <i>Boolean</i><span><span class="name">isString</span>(<span class="paramlist"><i>Object</i>obj</span>)</span>
+                            </div>
+                            <div class="details">
+                                <p>Checks if the object is a string.</p>
+                                <div><label>Since:</label>3.0</div>
+                                <div><label>Parameters:</label></div>
+                                <div class="item"><i style="vertical-align: top;">Object</i><span class="name">obj</span><span style="display: inline-block;"><span>the object to test</span></span></div>
+                            </div>
+                            <div class="details return">
+                                <div><label>Returns:</label>Boolean</div>
+                                <p>True if obj is a string; false otherwise</p>
+                            </div>
+                        </div>
+                        <div class="function">
+                            <div class="sig">
+                                <i>Boolean</i><span><span class="name">parseBoolean</span>(<span class="paramlist"><i>Object</i>obj</span>)</span>
+                            </div>
+                            <div class="details">
+                                <p>Parses the specified object into a boolean value.</p>
+                                <p>This method uses the below rules to determine the object's boolean value.</p>
+                                <ul>
+                                    <li>If obj is null, false is returned.</li>
+                                    <li>If obj is a boolean primitive, its value is returned.</li>
+                                    <li>If obj is a numeric value of 1.</li>
+                                    <li>If obj is an object, then toString() is called and is tested using the next rule.</li>
+                                    <li>If obj is a string, or toString() was called on obj (previous condition), then the string value is trimmed, and converted to lowercase and tested to see if matches one of the following string values: 't', 'true', '1', 'yes', 'y', 'on'. If it does, true is returned, otherwise false.</li>
+                                    <li>All other cases return false.</li>
+                                </ul>
+                                <div><label>Since:</label>3.0</div>
+                                <div><label>Parameters:</label></div>
+                                <div class="item"><i style="vertical-align: top;">Object</i><span class="name">obj</span><span style="display: inline-block;"><span>the object to parse</span></span></div>
+                            </div>
+                            <div class="details return">
+                                <div><label>Returns:</label>Boolean</div>
+                                <p>the boolean value the object represents or false if a boolean value could not be determined</p>
+                            </div>
+                        </div>
+                        <div class="function">
+                            <div class="sig">
+                                <i>String</i><span><span class="name">typeOf</span>(<span class="paramlist"><i>Object</i>obj</span>)</span>
+                            </div>
+                            <div class="details">
+                                <p>Replacement function for 'typeof' operator.</p>
+                                <p>Adapted from 'toType' by Angus Croll (<a href="http://javascriptweblog.wordpress.com/2011/08/08/fixing-the-javascript-typeof-operator/" target="_blank">http://javascriptweblog.wordpress.com/2011/08/08/fixing-the-javascript-typeof-operator/</a>)</p>
+                                <div><label>Since:</label>3.0</div>
+                                <div><label>Parameters:</label></div>
+                                <div class="item"><i style="vertical-align: top;">Object</i><span class="name">obj</span><span style="display: inline-block;"><span>the object to process</span></span></div>
+                            </div>
+                            <div class="details return">
+                                <div><label>Returns:</label>String</div>
+                                <p>lowercase type string</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pageNav">
+                    <a href="#fields">Fields</a><a href="#methods">Methods</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer">© 2015 - 2016 Paul M. Jarosch</div>
+    </body>
+</html>

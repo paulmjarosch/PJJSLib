@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="author" content="Paul M. Jarosch"/>
+        <meta name="description" content="PJ's JavaScript Library API Documentation"/>
+        <meta name="keywords" content="javascript, library, api, documentation"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="api_doc.css" rel="stylesheet" type="text/css" media="all"/>
+        <title>PJ's JavaScript Library v4.0 API Documentation - Math</title>
+    </head>
+    <body>
+        <div id="nav">
+            <div><a href="index.html">Overview</a></div>
+            <h1>Modules</h1>
+            <div class="h1">
+                <div><a href="pj.core.html">Core</a></div>
+                <h2>Utility</h2>
+                <div class="h2">
+                    <div><a href="pj.math.html">Math</a></div>
+                    <div><a href="pj.numeric.html">Numeric</a></div>
+                    <div><a href="pj.random.html">Random</a></div>
+                    <div><a href="pj.stringutils.html">String Utils</a></div>
+                </div>
+                <h2>Object</h2>
+                <div class="h2">
+                    <div><a href="pj.enum.html">Enum</a></div>
+                    <div><a href="pj.exception.html">Exception</a>
+                        <ul class="bulletless">
+                            <li><a href="pj.exception_ecnpe.html">EnumConstantNotPresentException</a></li>
+                            <li><a href="pj.exception_iae.html">IllegalArgumentException</a></li>
+                            <li><a href="pj.exception_nne.html">NotNumericException</a></li>
+                            <li><a href="pj.exception_uoe.html">UnsupportedOperationException</a></li>
+                        </ul>
+                    </div>
+                    <div><a href="pj.truthtable.html">Truth Table</a></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="content">
+            <h1>PJ's JavaScript Library API Documentation</h1>
+            <div class="h1">
+                <div><strong>Version:</strong> 4.0</div>
+                <div class="pageNav">
+                    <a href="#requirements">Requirements</a><a href="#fields">Fields</a><a href="#methods">Methods</a>
+                </div>
+
+                <h2>PJ.Math</h2>
+                <div class="h2">
+                    <div><label>Since:</label>2.0</div>
+                    <div><label>File(s):</label>pj.math.js, pj.math.min.js</div>
+                    <br>
+                    <p>This module contains mathematical utility methods.</p>
+
+                    <h3 id="requirements">Requirements</h3>
+                    <div class="h3">
+                        <ul>
+                            <li><a href="pj.core.html">Core Module</a></li>
+                            <li><a href="pj.numeric.html">Numeric Module</a></li>
+                        </ul>
+                    </div>
+
+                    <h3 id="fields">Fields</h3>
+                    <div class="h3">
+                        <div class="field">
+                            <div>ANGLE_UNIT_ARC_MINUTE</div>
+                            <div><label>Type:</label>Number</div>
+                            <div><label>Value:</label><code>21600</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>Minute of Arc</p>
+                        </div>
+                        <div class="field">
+                            <div>ANGLE_UNIT_ARC_SECOND</div>
+                            <div><label>Type:</label>Number</div>
+                            <div><label>Value:</label><code>1296000</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>Second of Arc</p>
+                        </div>
+                        <div class="field">
+                            <div>ANGLE_UNIT_BINARY_DEGREE</div>
+                            <div><label>Type:</label>Number</div>
+                            <div><label>Value:</label><code>256</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>Binary Degree</p>
+                        </div>
+                        <div class="field">
+                            <div>ANGLE_UNIT_DEGREE</div>
+                            <div><label>Type:</label>Number</div>
+                            <div><label>Value:</label><code>360</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>Degree</p>
+                        </div>
+                        <div class="field">
+                            <div>ANGLE_UNIT_GRAD</div>
+                            <div><label>Type:</label>Number</div>
+                            <div><label>Value:</label><code>400</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>Grad</p>
+                        </div>
+                        <div class="field">
+                            <div>ANGLE_UNIT_HEXACONTADE</div>
+                            <div><label>Type:</label>Number</div>
+                            <div><label>Value:</label><code>60</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>Hexacontade</p>
+                        </div>
+                        <div class="field">
+                            <div>ANGLE_UNIT_HOUR</div>
+                            <div><label>Type:</label>Number</div>
+                            <div><label>Value:</label><code>24</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>Hour</p>
+                        </div>
+                        <div class="field">
+                            <div>ANGLE_UNIT_MIL</div>
+                            <div><label>Type:</label>Number</div>
+                            <div><label>Value:</label><code>6400</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>Mil (NATO)</p>
+                        </div>
+                        <div class="field">
+                            <div>ANGLE_UNIT_POINT</div>
+                            <div><label>Type:</label>Number</div>
+                            <div><label>Value:</label><code>32</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>Point</p>
+                        </div>
+                        <div class="field">
+                            <div>ANGLE_UNIT_QUADRANT</div>
+                            <div><label>Type:</label>Number</div>
+                            <div><label>Value:</label><code>4</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>Quadrant</p>
+                        </div>
+                        <div class="field">
+                            <div>ANGLE_UNIT_RADIAN</div>
+                            <div><label>Type:</label>Number</div>
+                            <div><label>Value:</label><code>2</code>π</div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>Radian</p>
+                        </div>
+                        <div class="field">
+                            <div>ANGLE_UNIT_SEXTANT</div>
+                            <div><label>Type:</label>Number</div>
+                            <div><label>Value:</label><code>6</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>Sextant</p>
+                        </div>
+                        <div class="field">
+                            <div>ANGLE_UNIT_TURN</div>
+                            <div><label>Type:</label>Number</div>
+                            <div><label>Value:</label><code>1</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>Turn</p>
+                        </div>
+                    </div>
+
+                    <h3 id="methods">Methods</h3>
+                    <div class="h3">
+                        <div class="function">
+                            <div class="sig">
+                                <i>Number</i><span><span class="name">convert_angle</span>(<span class="paramlist"><i>Number</i>val<span class="opt">[, <i>Number</i>from<span class="opt">[,<i>Number</i>to]</span>]</span></span>)</span>
+                            </div>
+                            <div class="details">
+                                <p>Convert from one angle to another.</p>
+                                <p><code>from</code> and <code>to</code> are to be specified by the number units it takes to make a complete circle. <b>Default: </b><i>PJ.Math.ANGLE_UNIT_TURN</i> (= 1)</p>
+                                <div><label>Since:</label>3.0</div>
+                                <div><label>Parameters:</label></div>
+                                <div class="item"><i style="vertical-align: top;">Number</i><span class="name">val</span><span style="display: inline-block;">the numeric value to convert. If not specified, then 0 is used.</span></div>
+                                <div class="item"><i style="vertical-align: top;">Number</i><span class="name">from</span><span style="display: inline-block;">the angle unit converting from.</div>
+                                <div class="item"><i style="vertical-align: top;">Number</i><span class="name">to</span><span style="display: inline-block;">the angle unit converting to.</span></div>
+                            </div>
+                            <div class="details return">
+                                <div><label>Returns:</label>Number</div>
+                                <p>converted value</p>
+                            </div>
+                        </div>
+                        <div class="function">
+                            <div class="sig">
+                                <i>Array</i><span><span class="name">cubic</span>(<span class="paramlist"><i>Number</i>a, <i>Number</i>b, <i>Number</i>c, <i>Number</i>d</span>)</span>
+                            </div>
+                            <div class="details">
+                                <p>Calculates the possible solutions for a cubic equation. (<code>a×x<sup>3</sup> + b×x<sup>2</sup> + c×x + d = 0</code>)</p>
+                                <div><label>Since:</label>3.0</div>
+                                <div><label>Parameters:</label></div>
+                                <div class="item"><i style="vertical-align: top;">Number</i><span class="name">a</span><span style="display: inline-block;"><span>the coefficient of x<sup>3</sup></span></span></div>
+                                <div class="item"><i style="vertical-align: top;">Number</i><span class="name">b</span><span style="display: inline-block;"><span>the coefficient of x<sup>2</sup></span></span></div>
+                                <div class="item"><i style="vertical-align: top;">Number</i><span class="name">c</span><span style="display: inline-block;"><span>the coefficient of x</span></span></div>
+                                <div class="item"><i style="vertical-align: top;">Number</i><span class="name">d</span><span style="display: inline-block;"><span>the constant</span></span></div>
+                            </div>
+                            <div class="details return">
+                                <div><label>Returns:</label>Array</div>
+                                <p>The possible solutions for x.</p>
+                                <p>May contain 4 numbers or 2 numbers and 2 'imaginary' numbers represented as a string.</p>
+                            </div>
+                        </div>
+                        <div class="function">
+                            <div class="sig">
+                                <i>Number</i><span><span class="name">distance</span>(<span class="paramlist"><i>Array</i>pt1, <i>Array</i>pt2</span>)</span>
+                            </div>
+                            <div class="details">
+                                <p>Calculates the distance between two points in the cartesian coordinate system.</p>
+                                <p>If both arrays are not the same length, then the number of dimensions will be based on the shortest array.</p>
+                                <div><label>Since:</label>3.0</div>
+                                <div><label>Parameters:</label></div>
+                                <div class="item"><i style="vertical-align: top;">Array</i><span class="name">pt1</span><span style="display: inline-block;"><span>the first point (array of numbers)</span></span></div>
+                                <div class="item"><i style="vertical-align: top;">Array</i><span class="name">pt2</span><span style="display: inline-block;"><span>the second point (array of numbers)</span></span></div>
+                            </div>
+                            <div class="details return">
+                                <div><label>Returns:</label>Number</div>
+                                <p>the distance between the points</p>
+                            </div>
+                        </div>
+                        <div class="function">
+                            <div class="sig">
+                                <i>Number</i><span><span class="name">factorial</span>(<span class="paramlist"><i>Number</i>n</span>)</span>
+                            </div>
+                            <div class="details">
+                                <p>Computes n!</p>
+                                <div><label>Since:</label>3.0</div>
+                                <div><label>Parameters:</label></div>
+                                <div class="item"><i style="vertical-align: top;">Number</i><span class="name">n</span><span style="display: inline-block;"><span>the number to produce the factorial of</span></span></div>
+                            </div>
+                            <div class="details return">
+                                <div><label>Returns:</label>Number</div>
+                                <p>Result or <code>Number.NaN</code> if n is not a positive integer.</p>
+                            </div>
+                        </div>
+                        <div class="function">
+                            <div class="sig">
+                                <i>Number</i><span><span class="name">gcd</span>(<span class="paramlist"><i>Number...</i>_args</span>)</span>
+                            </div>
+                            <div class="details">
+                                <p>Greatest Common Denominator of 2 or more integers.</p>
+                                <div><label>Since:</label>3.0</div>
+                                <div><label>Parameters:</label></div>
+                                <div class="item"><i style="vertical-align: top;">Number...</i><span class="name">_args</span><span style="display: inline-block;"><span>integers to get the GCD of</span></span></div>
+                            </div>
+                            <div class="details return">
+                                <div><label>Returns:</label>Number</div>
+                                <p>The result.</p>
+                            </div>
+                            <div class="details throws">
+                                <div><label>Throws:</label></div>
+                                <div class="item"><i style="vertical-align: top;"><code>PJ.IllegalArgumentException</code></i><span style="display:inline-block"><span>Thrown if any parameter is not an integer.</span></span></div>
+                            </div>
+                        </div>
+                        <div class="function">
+                            <div class="sig">
+                                <i>Number</i><span><span class="name">hypotenuse</span>(<span class="paramlist"><i>Number...</i>_args</span>)</span>
+                            </div>
+                            <div class="details">
+                                <p>Calculates the hypotenuse of a 'triangle'.</p>
+                                <p>This function is not limited to two dimensions. It can handle any number of dimensions greater than or equal to 2.<p>
+                                <div><label>Since:</label>3.0</div>
+                                <div><label>Parameters:</label></div>
+                                <div class="item"><i style="vertical-align: top;">Number...</i><span class="name">_args</span><span style="display: inline-block;"><span>the sides lengths of the 'triangle' (array of numbers)</span></span></div>
+                            </div>
+                            <div class="details return">
+                                <div><label>Returns:</label>Number</div>
+                                <p>The hypotenuse length.</p>
+                            </div>
+                            <div class="details throws">
+                                <div><label>Throws:</label></div>
+                                <div class="item"><i style="vertical-align: top;"><code>PJ.IllegalArgumentException</code></i><span style="display:inline-block"><span>Thrown if there are less than 2 parameters or if any parameter is not an integer.</span></span></div>
+                            </div>
+                        </div>
+                        <div class="function">
+                            <div class="sig">
+                                <i>Boolean</i><span><span class="name">isPrime</span>(<span class="paramlist"><i>Number</i>n</span>)</span>
+                            </div>
+                            <div class="details">
+                                <p>Determines if the input is a prime a number.</p>
+                                <div><label>Since:</label>3.0</div>
+                                <div><label>Parameters:</label></div>
+                                <div class="item"><i style="vertical-align: top;">Number</i><span class="name">n</span><span style="display: inline-block;"><span>the number to test</span></span></div>
+                            </div>
+                            <div class="details return">
+                                <div><label>Returns:</label>Boolean</div>
+                                <p>True if n is a prime; false otherwise</p>
+                            </div>
+                        </div>
+                        <div class="function">
+                            <div class="sig">
+                                <i>Number</i><span><span class="name">lcm</span>(<span class="paramlist"><i>Number...</i>_args</span>)</span>
+                            </div>
+                            <div class="details">
+                                <p>Least Common Muliple of 2 or more integers.</p>
+                                <div><label>Since:</label>3.0</div>
+                                <div><label>Parameters:</label></div>
+                                <div class="item"><i style="vertical-align: top;">Number...</i><span class="name">_args</span><span style="display: inline-block;"><span>integers to get the LCM of</span></span></div>
+                            </div>
+                            <div class="details return">
+                                <div><label>Returns:</label>Number</div>
+                                <p>The result.</p>
+                            </div>
+                            <div class="details throws">
+                                <div><label>Throws:</label></div>
+                                <div class="item"><i style="vertical-align: top;"><code>PJ.IllegalArgumentException</code></i><span style="display:inline-block"><span>Thrown if any parameter is not an integer.</span></span></div>
+                            </div>
+                        </div>
+                        <div class="function">
+                            <div class="sig">
+                                <i>Array</i><span><span class="name">midpoint</span>(<span class="paramlist"><i>Array</i>pt1, <i>Array</i>pt2</span>)</span>
+                            </div>
+                            <div class="details">
+                                <p>Calculates the middle point between two points in the cartesian coordinate system.</p>
+                                <p>If both arrays are not the same length, then the number of dimensions will be based on the shortest array.</p>
+                                <div><label>Since:</label>3.0</div>
+                                <div><label>Parameters:</label></div>
+                                <div class="item"><i style="vertical-align: top;">Array</i><span class="name">pt1</span><span style="display: inline-block;"><span>the first point (array of numbers)</span></span></div>
+                                <div class="item"><i style="vertical-align: top;">Array</i><span class="name">pt2</span><span style="display: inline-block;"><span>the second point (array of numbers)</span></span></div>
+                            </div>
+                            <div class="details return">
+                                <div><label>Returns:</label>Array</div>
+                                <p>The point halfway between both points.</p>
+                            </div>
+                        </div>
+                        <div class="function">
+                            <div class="sig">
+                                <i>Number</i><span><span class="name">nCr</span>(<span class="paramlist"><i>Number</i>n, <i>Number</i>r, <i>Boolean</i>b</span>)</span>
+                            </div>
+                            <div class="details">
+                                <p>Calculates the number of combinations.</p>
+                                <div><label>Since:</label>3.0</div>
+                                <div><label>Parameters:</label></div>
+                                <div class="item"><i style="vertical-align: top;">Number</i><span class="name">n</span><span style="display: inline-block;"><span>the number pf objects</span></span></div>
+                                <div class="item"><i style="vertical-align: top;">Number</i><span class="name">r</span><span style="display: inline-block;"><span>the number of objects taken at a time</span></span></div>
+                                <div class="item"><i style="vertical-align: top;">Boolean</i><span class="name">b</span><span style="display: inline-block;"><span>flag to indicate repetition</span></span></div>
+                            </div>
+                            <div class="details return">
+                                <div><label>Returns:</label>Boolean</div>
+                                <p>The number of combinations.</p>
+                            </div>
+                        </div>
+                        <div class="function">
+                            <div class="sig">
+                                <i>Array</i><span><span class="name">nFactorize</span>(<span class="paramlist"><i>Number</i>n</span>)</span>
+                            </div>
+                            <div class="details">
+                                <p>Calculates the factors of the specified a number.</p>
+                                <div><label>Since:</label>3.0</div>
+                                <div><label>Parameters:</label></div>
+                                <div class="item"><i style="vertical-align: top;">Number</i><span class="name">n</span><span style="display: inline-block;"><span>the number to get the factors of. Must be an integer.</span></span></div>
+                            </div>
+                            <div class="details return">
+                                <div><label>Returns:</label>Array</div>
+                                <p>The factors of n.</p>
+                            </div>
+                        </div>
+                        <div class="function">
+                            <div class="sig">
+                                <i>Boolean</i><span><span class="name">nPr</span>(<span class="paramlist"><i>Number</i>n, <i>Number|Array</i>r</span>)</span>
+                            </div>
+                            <div class="details">
+                                <p>Calculates the number of permutations.</p>
+                                <div><label>Since:</label>3.0</div>
+                                <div><label>Parameters:</label></div>
+                                <div class="item"><i style="vertical-align: top;">Number</i><span class="name">n</span><span style="display: inline-block;"><span>the number of objects</span></span></div>
+                                <div class="item"><i style="vertical-align: top;">Number|Array</i><span class="name">r</span>
+                                    <ul>
+                                        <li>if a <i>Number</i>, then this is the number of objects taken at a time.</li>
+                                        <li>if a <i>Array</i> of integers, then this is the list of like occurences</li>
+                                        <li>if omitted, then all objects are taken at a time</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="details return">
+                                <div><label>Returns:</label>Number</div>
+                                <p>The number of permutations.</p>
+                            </div>
+                        </div>
+                        <div class="function">
+                            <div class="sig">
+                                <i>Array</i><span><span class="name">quadratic</span>(<span class="paramlist"><i>Number</i>a, <i>Number</i>b, <i>Number</i>c)</span>
+                            </div>
+                            <div class="details">
+                                <p>Calculates the possible solutions for a quadratic equation. (<code>a×x<sup>2</sup> + b×x + c = 0</code>)</p>
+                                <div><label>Since:</label>3.0</div>
+                                <div><label>Parameters:</label></div>
+                                <div class="item"><i style="vertical-align: top;">Number</i><span class="name">a</span><span style="display: inline-block;"><span>the coefficient of x<sup>2</sup></span></span></div>
+                                <div class="item"><i style="vertical-align: top;">Number</i><span class="name">b</span><span style="display: inline-block;"><span>the coefficient of x</span></span></div>
+                                <div class="item"><i style="vertical-align: top;">Number</i><span class="name">c</span><span style="display: inline-block;"><span>the constant</span></span></div>
+                            </div>
+                            <div class="details return">
+                                <div><label>Returns:</label>Array</div>
+                                <p>The possible solutions for x.</p>
+                                <p>May contain one or two numbers or 2 'imaginary' numbers represented as a string.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pageNav">
+                    <a href="#requirements">Requirements</a><a href="#fields">Fields</a><a href="#methods">Methods</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer">© 2015 - 2016 Paul M. Jarosch</div>
+    </body>
+</html>

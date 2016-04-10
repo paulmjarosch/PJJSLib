@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="author" content="Paul M. Jarosch"/>
+        <meta name="description" content="PJ's JavaScript Library API Documentation"/>
+        <meta name="keywords" content="javascript, library, api, documentation"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="api_doc.css" rel="stylesheet" type="text/css" media="all"/>
+        <title>PJ's JavaScript Library v4.0 API Documentation - Enumeration</title>
+    </head>
+    <body>
+        <div id="nav">
+            <div><a href="index.html">Overview</a></div>
+            <h1>Modules</h1>
+            <div class="h1">
+                <div><a href="pj.core.html">Core</a></div>
+                <h2>Utility</h2>
+                <div class="h2">
+                    <div><a href="pj.math.html">Math</a></div>
+                    <div><a href="pj.numeric.html">Numeric</a></div>
+                    <div><a href="pj.random.html">Random</a></div>
+                    <div><a href="pj.stringutils.html">String Utils</a></div>
+                </div>
+                <h2>Object</h2>
+                <div class="h2">
+                    <div><a href="pj.enum.html">Enum</a></div>
+                    <div><a href="pj.exception.html">Exception</a>
+                        <ul class="bulletless">
+                            <li><a href="pj.exception_ecnpe.html">EnumConstantNotPresentException</a></li>
+                            <li><a href="pj.exception_iae.html">IllegalArgumentException</a></li>
+                            <li><a href="pj.exception_nne.html">NotNumericException</a></li>
+                            <li><a href="pj.exception_uoe.html">UnsupportedOperationException</a></li>
+                        </ul>
+                    </div>
+                    <div><a href="pj.truthtable.html">Truth Table</a></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="content">
+            <h1>PJ's JavaScript Library API Documentation</h1>
+            <div class="h1">
+                <div><strong>Version:</strong> 4.0</div>
+                <div class="pageNav">
+                    <a href="#requirements">Requirements</a><a href="#constr">Constructor</a><a href="#methods">Methods</a>
+                </div>
+
+                <h2>PJ.Enum</h2>
+                <div class="h2">
+                    <div><label>Since:</label>2.0</div>
+                    <div><label>File(s):</label>pj.enum.js, pj.enum.min.js</div>
+                    <br>
+                    <p>Enumeration Class Construct used to create an enum-like structure.</p>
+                    <p>Adapted from Node-Enum by Tolgaek. (<a target="_blank" href="https://github.com/tolgaek/node-enum">https://github.com/tolgaek/node-enum</a>)</p>
+
+                    <h3 id="requirements">Requirements</h3>
+                    <div class="h3">
+                        <ul>
+                            <li><a href="pj.core.html">Core Module</a></li>
+                        </ul>
+                    </div>
+
+                    <h3 id="constr">Constructor</h3>
+                    <div class="h3">
+                        <div class="function">
+                            <div class="sig">
+                                <span class="name">Enum</span>(<span class="paramlist"><i>String</i> ...</span>)
+                            </div>
+                            <div class="details">
+                                <div><label>Since:</label>2.0</div>
+                                <p>Constructs new Enumeration object.</p>
+                                <p>Example usage: <code>var colors = new PJ.Enum("RED", "WHITE", "BLUE");</code></p>
+                                <p>Any non-string parameter is ignored. Duplicate names are ignored. Names are case-senstive, so "RED", "red", "ReD", etc will all be separate enumeration constants.</p>
+
+                                <div><label>Parameters:</label></div>
+                                <div class="item"><i style="vertical-align: top;">string</i><span class="name">...</span><span style="display: inline-block;"><span>variable argument list of strings as the names for each Enum Constant.</span></span></div>
+                            </div>
+
+                            <div class="details throws">
+                                <div><label>Throws:</label></div>
+                                <div class="item"><i style="vertical-align: top;"><code>PJ.IllegalArgumentException</code></i><span style="display:inline-block"><span>thrown if an invalid identifier is given or if an identifier is given twice.</span></span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 id="methods">Methods</h3>
+                    <div class="h3">
+                        <div class="function">
+                            <div class="sig">
+                                <i>Number</i><span class="name">size</span>()
+                            </div>
+                            <div class="details">
+                                <div><label>Since:</label>4.0</div>
+                                <p>Get the number of constants in this enumeration.</p>
+                            </div>
+                            <div class="details return">
+                                <div><label>Returns:</label>string</div>
+                                <p>Number of constants.</p>
+                            </div>
+                        </div>
+
+                        <div class="function">
+                            <div class="sig">
+                                <i>String</i><span><span class="name">toString</span>()</span>
+                            </div>
+                            <div class="details">
+                                <p>Overrides the default toString method.</p>
+                                <div><label>Since:</label>2.0</div>
+                                <div><label>Overrides:</label><code>toString</code> in Object</div>
+                            </div>
+                            <div class="details return">
+                                <div><label>Returns:</label>String</div>
+                                <p>Always returns the string <code>Enumeration</code>.</p>
+                            </div>
+                        </div>
+
+                        <div class="function">
+                            <div class="sig">
+                                <i>Number</i><span><span class="name">valueOf</span>(<span class="paramlist"><i>String</i>name</span>)</span>
+                            </div>
+                            <div class="details">
+                                <p>Get the enumeration constant value by its name.</p>
+                                <div><label>Since:</label>2.0</div>
+                                <div><label>Overrides:</label><code>valueOf</code> in Object</div>
+                            </div>
+                            <div class="details params">
+                                <div><label>Parameters:</label></div>
+                                <div class="item"><i style="vertical-align: top;">string</i><span class="name">name</span><span style="display: inline-block;"><span>the name of constant to get</span></span></div>
+                            </div>
+                            <div class="details return">
+                                <div><label>Returns:</label>Number</div><p>The ordinal value of the Enumeration Constant.</p>
+                            </div>
+                            <div class="details throws">
+                                <div><label>Throws:</label></div>
+                                <div class="item"><i style="vertical-align: top;"><code>PJ.IllegalArgumentException</code></i><span style="display:inline-block"><span>Thrown if <code>name</code> if name is not set, not a string, or not a valid identifier.</span></span></div>
+                                <div class="item"><i style="vertical-align: top;"><code>PJ.EnumConstantNotPresentException</code></i><span style="display:inline-block"><span>Thrown if there is no constant with the specified name.</span></span></div>
+                            </div>
+                        </div>
+
+                        <div class="function">
+                            <div class="sig">
+                                <i>String</i><span class="name">values</span>()
+                            </div>
+                            <div class="details">
+                                <div><label>Since:</label>4.0</div>
+                                <p>Get the enumerated values.</p>
+                                <p>Changes in the returned array will not modify this enumeration.</p>
+                            </div>
+                            <div class="details return">
+                                <div><label>Returns:</label>string</div>
+                                <p>Associative array where Enum Constant names are the keys and the values are 0 through <code>(n-1)</code>, where <code>n</code> is the number of Enum Constants defined.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pageNav">
+                    <a href="#requirements">Requirements</a><a href="#constr">Constructor</a><a href="#methods">Methods</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer">© 2015 - 2016 Paul M. Jarosch</div>
+    </body>
+</html>

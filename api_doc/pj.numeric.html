@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="author" content="Paul M. Jarosch"/>
+        <meta name="description" content="PJ's JavaScript Library API Documentation"/>
+        <meta name="keywords" content="javascript, library, api, documentation"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="api_doc.css" rel="stylesheet" type="text/css" media="all"/>
+        <title>PJ's JavaScript Library v4.0 API Documentation - Numeric</title>
+    </head>
+    <body>
+        <div id="nav">
+            <div><a href="index.html">Overview</a></div>
+            <h1>Modules</h1>
+            <div class="h1">
+                <div><a href="pj.core.html">Core</a></div>
+                <h2>Utility</h2>
+                <div class="h2">
+                    <div><a href="pj.math.html">Math</a></div>
+                    <div><a href="pj.numeric.html">Numeric</a></div>
+                    <div><a href="pj.random.html">Random</a></div>
+                    <div><a href="pj.stringutils.html">String Utils</a></div>
+                </div>
+                <h2>Object</h2>
+                <div class="h2">
+                    <div><a href="pj.enum.html">Enum</a></div>
+                    <div><a href="pj.exception.html">Exception</a>
+                        <ul class="bulletless">
+                            <li><a href="pj.exception_ecnpe.html">EnumConstantNotPresentException</a></li>
+                            <li><a href="pj.exception_iae.html">IllegalArgumentException</a></li>
+                            <li><a href="pj.exception_nne.html">NotNumericException</a></li>
+                            <li><a href="pj.exception_uoe.html">UnsupportedOperationException</a></li>
+                        </ul>
+                    </div>
+                    <div><a href="pj.truthtable.html">Truth Table</a></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="content">
+            <h1>PJ's JavaScript Library API Documentation</h1>
+            <div class="h1">
+                <div><strong>Version:</strong> 4.0</div>
+                <div class="pageNav">
+                    <a href="#requirements">Requirements</a><a href="#fields">Fields</a><a href="#methods">Methods</a>
+                </div>
+
+                <h2>PJ.Numeric</h2>
+                <div class="h2">
+                    <div><label>Since:</label>2.0</div>
+                    <div><label>File(s):</label>pj.numeric.js, pj.numeric.min.js</div>
+                    <br>
+                    <p>This module contains numeric testing methods.</p>
+
+                    <h3 id="requirements">Requirements</h3>
+                    <div class="h3">
+                        <ul>
+                            <li><a href="pj.core.html">Core Module</a></li>
+                        </ul>
+                    </div>
+                    <h3 id="fields">Fields</h3>
+                    <div class="h3">
+                        <div class="field">
+                            <div>BYTE_SIGNED_MAX_VALUE</div>
+                            <div><label>Type:</label>Number</div>
+                            <div><label>Value:</label><code>127</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>Largest possible value for a signed byte.</p>
+                        </div>
+                        <div class="field">
+                            <div>BYTE_SIGNED_MIN_VALUE</div>
+                            <div><label>Type:</label>Number</div>
+                            <div><label>Value:</label><code>-128</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>Smallest possible value for a signed byte.</p>
+                        </div>
+                        <div class="field">
+                            <div>BYTE_UNSIGNED_MAX_VALUE</div>
+                            <div><label>Type:</label>Number</div>
+                            <div><label>Value:</label><code>255</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>Largest possible value for a unsigned byte.</p>
+                        </div>
+                        <div class="field">
+                            <div>BYTE_UNSIGNED_MIN_VALUE</div>
+                            <div><label>Type:</label>Number</div>
+                            <div><label>Value:</label><code>0</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>Smallest possible value for a unsigned byte.</p>
+                        </div>
+                        <div class="field">
+                            <div>FLOAT_SIGNED_MAX_VALUE</div>
+                            <div><label>Type:</label>Number</div>
+                            <div><label>Value:</label><code>Number.MAX_VALUE</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>Largest possible value for a signed float.</p>
+                        </div>
+                        <div class="field">
+                            <div>FLOAT_SIGNED_MIN_VALUE</div>
+                            <div><label>Type:</label>Number</div>
+                            <div><label>Value:</label><code>-1 × Number.MAX_VALUE;</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>Smallest possible value for a signed float.</p>
+                        </div>
+                        <div class="field">
+                            <div>FLOAT_UNSIGNED_MAX_VALUE</div>
+                            <div><label>Type:</label>Number</div>
+                            <div><label>Value:</label><code>Number.MAX_VALUE</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>Largest possible value for an unsigned float.</p>
+                        </div>
+                        <div class="field">
+                            <div>FLOAT_UNSIGNED_MIN_VALUE</div>
+                            <div><label>Type:</label>Number</div>
+                            <div><label>Value:</label><code>Number.MIN_VALUE</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>Smallest possible value for an unsigned float.</p>
+                        </div>
+                        <div class="field">
+                            <div>INTEGER_SIGNED_MAX_VALUE</div>
+                            <div><label>Type:</label>Number</div>
+                            <div><label>Value:</label><code>2,147,483,647</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>Largest possible value for a signed integer.</p>
+                        </div>
+                        <div class="field">
+                            <div>INTEGER_SIGNED_MIN_VALUE</div>
+                            <div><label>Type:</label>Number</div>
+                            <div><label>Value:</label><code>-2,147,483,648</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>Smallest possible value for a signed integer.</p>
+                        </div>
+                        <div class="field">
+                            <div>INTEGER_UNSIGNED_MAX_VALUE</div>
+                            <div><label>Type:</label>Number</div>
+                            <div><label>Value:</label><code>4,294,967,295</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>Largest possible value for a unsigned integer.</p>
+                        </div>
+                        <div class="field">
+                            <div>INTEGER_UNSIGNED_MIN_VALUE</div>
+                            <div><label>Type:</label>Number</div>
+                            <div><label>Value:</label><code>0</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>Smallest possible value for a unsigned integer.</p>
+                        </div>
+                        <div class="field">
+                            <div>LONG_SIGNED_MAX_VALUE</div>
+                            <div><label>Type:</label>Number</div>
+                            <div><label>Value:</label><code>9,223,372,036,854,775,807</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>Largest possible value for a signed long.</p>
+                        </div>
+                        <div class="field">
+                            <div>LONG_SIGNED_MIN_VALUE</div>
+                            <div><label>Type:</label>Number</div>
+                            <div><label>Value:</label><code>-9,223,372,036,854,775,808</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>Smallest possible value for a signed long.</p>
+                        </div>
+                        <div class="field">
+                            <div>LONG_UNSIGNED_MAX_VALUE</div>
+                            <div><label>Type:</label>Number</div>
+                            <div><label>Value:</label><code>18,446,744,073,709,551,615</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>Largest possible value for a unsigned long.</p>
+                        </div>
+                        <div class="field">
+                            <div>LONG_UNSIGNED_MIN_VALUE</div>
+                            <div><label>Type:</label>Number</div>
+                            <div><label>Value:</label><code>0</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>Smallest possible value for a unsigned long.</p>
+                        </div>
+                        <div class="field">
+                            <div>SHORT_SIGNED_MAX_VALUE</div>
+                            <div><label>Type:</label>Number</div>
+                            <div><label>Value:</label><code>32767</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>Largest possible value for a signed short.</p>
+                        </div>
+                        <div class="field">
+                            <div>SHORT_SIGNED_MIN_VALUE</div>
+                            <div><label>Type:</label>Number</div>
+                            <div><label>Value:</label><code>-32768</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>Smallest possible value for a signed short.</p>
+                        </div>
+                        <div class="field">
+                            <div>SHORT_UNSIGNED_MAX_VALUE</div>
+                            <div><label>Type:</label>Number</div>
+                            <div><label>Value:</label><code>65535</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>Largest possible value for a unsigned short.</p>
+                        </div>
+                        <div class="field">
+                            <div>SHORT_UNSIGNED_MIN_VALUE</div>
+                            <div><label>Type:</label>Number</div>
+                            <div><label>Value:</label><code>0</code></div>
+                            <div><label>Since:</label>4.0</div>
+                            <p>Smallest possible value for a unsigned short.</p>
+                        </div>
+                    </div>
+
+                    <h3 id="methods">Methods</h3>
+                    <div class="h3">
+                        <div class="function">
+                            <div class="sig">
+                                <i>Boolean</i><span><span class="name">isByte</span>(<span class="paramlist"><i>Number</i>n, <i>Number</i>signed</span>)</span>
+                            </div>
+                            <div class="details">
+                                <p>Determines if a number is a byte.</p>
+                                <div><label>Since:</label>4.0</div>
+                                <div><label>Parameters:</label></div>
+                                <div class="item"><i style="vertical-align: top;">Number</i><span class="name">n</span><span style="display: inline-block;">the number to test</span></div>
+                                <div class="item"><i style="vertical-align: top;">Boolean</i><span class="name">signed</span><span style="display: inline-block;">indicates check for signed (true) or unsigned (false)</span></div>
+                            </div>
+                            <div class="details return">
+                                <div><label>Returns:</label>Boolean</div>
+                                <p>True if number is a byte; false otherwise</p>
+                            </div>
+                        </div>
+                        <div class="function">
+                            <div class="sig">
+                                <i>Boolean</i><span><span class="name">isFloat</span>(<span class="paramlist"><i>Number</i>n, <i>Number</i>signed</span>)</span>
+                            </div>
+                            <div class="details">
+                                <p>Determines if a number is a float.</p>
+                                <div><label>Since:</label>4.0</div>
+                                <div><label>Parameters:</label></div>
+                                <div class="item"><i style="vertical-align: top;">Number</i><span class="name">n</span><span style="display: inline-block;">the number to test</span></div>
+                                <div class="item"><i style="vertical-align: top;">Boolean</i><span class="name">signed</span><span style="display: inline-block;">indicates check for signed (true) or unsigned (false)</span></div>
+                            </div>
+                            <div class="details return">
+                                <div><label>Returns:</label>Boolean</div>
+                                <p>True if number is a float; false otherwise</p>
+                            </div>
+                        </div>
+                        <div class="function">
+                            <div class="sig">
+                                <i>Boolean</i><span><span class="name">isInteger</span>(<span class="paramlist"><i>Number</i>n, <i>Number</i>signed</span>)</span>
+                            </div>
+                            <div class="details">
+                                <p>Determines if a number is an integer.</p>
+                                <div><label>Since:</label>4.0</div>
+                                <div><label>Parameters:</label></div>
+                                <div class="item"><i style="vertical-align: top;">Number</i><span class="name">n</span><span style="display: inline-block;">the number to test</span></div>
+                                <div class="item"><i style="vertical-align: top;">Boolean</i><span class="name">signed</span><span style="display: inline-block;">indicates check for signed (true) or unsigned (false)</span></div>
+                            </div>
+                            <div class="details return">
+                                <div><label>Returns:</label>Boolean</div>
+                                <p>True if number is an integer; false otherwise</p>
+                            </div>
+                        </div>
+                        <div class="function">
+                            <div class="sig">
+                                <i>Boolean</i><span><span class="name">isIntegral</span>(<span class="paramlist"><i>Number</i>n</span>)</span>
+                            </div>
+                            <div class="details">
+                                <p>Determines if a number is an integral data type. (aka whole number)</p>
+                                <div><label>Since:</label>4.0</div>
+                                <div><label>Parameters:</label></div>
+                                <div class="item"><i style="vertical-align: top;">Number</i><span class="name">n</span><span style="display: inline-block;">the number to test</span></div>
+                            </div>
+                            <div class="details return">
+                                <div><label>Returns:</label>Boolean</div>
+                                <p>True if n is whole number; false otherwise.</p>
+                            </div>
+                        </div>
+                        <div class="function">
+                            <div class="sig">
+                                <i>Boolean</i><span><span class="name">isLong</span>(<span class="paramlist"><i>Number</i>n, <i>Number</i>signed</span>)</span>
+                            </div>
+                            <div class="details">
+                                <p>Determines if a number is a long.</p>
+                                <div><label>Since:</label>4.0</div>
+                                <div><label>Parameters:</label></div>
+                                <div class="item"><i style="vertical-align: top;">Number</i><span class="name">n</span><span style="display: inline-block;">the number to test</span></div>
+                                <div class="item"><i style="vertical-align: top;">Boolean</i><span class="name">signed</span><span style="display: inline-block;">indicates check for signed (true) or unsigned (false)</span></div>
+                            </div>
+                            <div class="details return">
+                                <div><label>Returns:</label>Boolean</div>
+                                <p>True if number is a long; false otherwise</p>
+                            </div>
+                        </div>
+                        <div class="function">
+                            <div class="sig">
+                                <i>Boolean</i><span><span class="name">isShort</span>(<span class="paramlist"><i>Number</i>n, <i>Number</i>signed</span>)</span>
+                            </div>
+                            <div class="details">
+                                <p>Determines if a number is a short.</p>
+                                <div><label>Since:</label>4.0</div>
+                                <div><label>Parameters:</label></div>
+                                <div class="item"><i style="vertical-align: top;">Number</i><span class="name">n</span><span style="display: inline-block;">the number to test</span></div>
+                                <div class="item"><i style="vertical-align: top;">Boolean</i><span class="name">signed</span><span style="display: inline-block;">indicates check for signed (true) or unsigned (false)</span></div>
+                            </div>
+                            <div class="details return">
+                                <div><label>Returns:</label>Boolean</div>
+                                <p>True if number is a short; false otherwise</p>
+                            </div>
+                        </div>
+                        <div class="function">
+                            <div class="sig">
+                                <i>Boolean</i><span><span class="name">isWithinRange</span>(<span class="paramlist"><i>Number</i>n, <i>Number</i>min, <i>Number</i>max<span class="opt">[, <i>Boolean</i>min_inc<span class="opt">[,<i>Boolean</i>max_inc]</span>]</span></span>)</span>
+                            </div>
+                            <div class="details">
+                                <p>Performs a check on n to determine if it is within the specified range.</p>
+                                <div><label>Since:</label>4.0</div>
+                                <div><label>Parameters:</label></div>
+                                <div class="item"><i style="vertical-align: top;">Number</i><span class="name">n</span><span style="display: inline-block;">the value to check</span></div>
+                                <div class="item"><i style="vertical-align: top;">Number</i><span class="name">min</span><span style="display: inline-block;">the minimum value</span></div>
+                                <div class="item"><i style="vertical-align: top;">Number</i><span class="name">max</span><span style="display: inline-block;">the maximum value</span></div>
+                                <div class="item"><i style="vertical-align: top;">Boolean</i><span class="name">min_inc</span><span style="display: inline-block;">is min inclusive range? If true, then min is also a valid value for n. Defaults to true.</span></div>
+                                <div class="item"><i style="vertical-align: top;">Boolean</i><span class="name">max_inc</span><span style="display: inline-block;">is max inclusive range? If true, then max is also a valid value for n. Defaults to true.</span></div>
+                            </div>
+                            <div class="details return">
+                                <div><label>Returns:</label>Boolean</div>
+                                <p>True if n is within range; otherwise false</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pageNav">
+                    <a href="#requirements">Requirements</a><a href="#fields">Fields</a><a href="#methods">Methods</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer">© 2015 - 2016 Paul M. Jarosch</div>
+    </body>
+</html>
